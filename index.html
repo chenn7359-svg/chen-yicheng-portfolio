@@ -1,0 +1,764 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="陈奕成个人简历｜项目助理、内容编辑、统筹助理方向">
+  <title>陈奕成｜个人简历</title>
+  <style>
+    :root {
+      --paper: #f8fafc;
+      --canvas: #e9eef5;
+      --ink: #0b1f3a;
+      --muted: #5f6f82;
+      --line: #cfdae5;
+      --accent: #00a3b4;
+      --accent-strong: #0874d1;
+      --impact: #ff563f;
+      --klein: #002fa7;
+      --klein-soft: rgba(0, 47, 167, .075);
+      --klein-mid: rgba(0, 47, 167, .14);
+      --accent-soft: #dff5f7;
+      --tag: #e8f3f7;
+      --shadow: 0 28px 80px rgba(11, 31, 58, .16);
+    }
+
+    [data-theme="night"] {
+      --paper: #161b22;
+      --canvas: #0e1217;
+      --ink: #eef3f4;
+      --muted: #a9b5ba;
+      --line: #303943;
+      --accent: #33d2dd;
+      --accent-strong: #58a8ff;
+      --impact: #ff806d;
+      --klein: #4f82ff;
+      --klein-soft: rgba(79, 130, 255, .10);
+      --klein-mid: rgba(79, 130, 255, .18);
+      --accent-soft: #12343c;
+      --tag: #202a30;
+      --shadow: 0 24px 80px rgba(0, 0, 0, .34);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 8%, rgba(0,163,180,.18), transparent 28rem),
+        radial-gradient(circle at 92% 78%, rgba(255,86,63,.12), transparent 30rem),
+        var(--canvas);
+      font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+      font-size: 14px;
+      line-height: 1.62;
+      transition: background .25s ease, color .25s ease;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .toolbar {
+      position: fixed;
+      z-index: 10;
+      top: 18px;
+      right: 20px;
+      display: flex;
+      gap: 8px;
+    }
+
+    .toolbar button {
+      height: 38px;
+      padding: 0 14px;
+      border: 1px solid color-mix(in srgb, var(--line) 85%, transparent);
+      border-radius: 999px;
+      color: var(--ink);
+      background: color-mix(in srgb, var(--paper) 88%, transparent);
+      box-shadow: 0 6px 22px rgba(25, 35, 40, .08);
+      backdrop-filter: blur(14px);
+      cursor: pointer;
+      font: inherit;
+    }
+
+    .toolbar button:hover { border-color: var(--accent); color: var(--accent); }
+
+    .page {
+      width: min(1120px, calc(100% - 36px));
+      margin: 46px auto;
+      overflow: hidden;
+      background: var(--paper);
+      border: 1px solid color-mix(in srgb, var(--line) 72%, transparent);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.55fr .85fr;
+      gap: 46px;
+      padding: 58px 64px 44px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 7px;
+      background: linear-gradient(90deg, var(--accent-strong) 0 34%, var(--accent) 34% 72%, var(--impact) 72% 100%);
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--accent-strong);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: "STSong", "Songti SC", "SimSun", serif;
+      font-size: clamp(46px, 6vw, 74px);
+      font-weight: 600;
+      letter-spacing: .08em;
+      line-height: 1.08;
+    }
+
+    .role {
+      margin: 16px 0 0;
+      color: var(--ink);
+      font-size: 17px;
+      font-weight: 750;
+      letter-spacing: .03em;
+    }
+
+    .summary {
+      max-width: 660px;
+      margin: 28px 0 0;
+      color: color-mix(in srgb, var(--ink) 84%, var(--muted));
+      font-size: 15px;
+      line-height: 1.85;
+    }
+
+    .feature-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .feature-chip {
+      padding: 7px 11px;
+      border-radius: 6px;
+      color: #fff;
+      background: #0b1f3a;
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: .02em;
+    }
+
+    .feature-chip:nth-child(2) { background: var(--accent-strong); }
+    .feature-chip:nth-child(3) { background: var(--accent); }
+    .feature-chip:nth-child(4) { background: var(--impact); }
+
+    .contact {
+      align-self: end;
+      padding-left: 26px;
+      border-left: 1px solid var(--line);
+    }
+
+    .contact-item { margin: 0 0 13px; }
+    .contact-item:last-child { margin-bottom: 0; }
+
+    .contact-label {
+      display: block;
+      margin-bottom: 1px;
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: .1em;
+    }
+
+    .contact-value { font-size: 14px; font-weight: 600; overflow-wrap: anywhere; }
+    .contact-value a:hover { color: var(--impact); }
+
+    .content {
+      display: grid;
+      grid-template-columns: minmax(0, 1.65fr) minmax(260px, .85fr);
+      gap: 54px;
+      padding: 44px 64px 58px;
+    }
+
+    section + section { margin-top: 38px; }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 21px;
+      font-size: 15px;
+      font-weight: 750;
+      letter-spacing: .12em;
+    }
+
+    .section-title::before {
+      content: "";
+      width: 24px;
+      height: 3px;
+      flex: 0 0 auto;
+      border-radius: 2px;
+      background: linear-gradient(90deg, var(--accent-strong), var(--accent));
+    }
+
+    .entry {
+      position: relative;
+      padding-left: 22px;
+    }
+
+    .entry + .entry { margin-top: 25px; }
+
+    .entry-card {
+      margin-left: -12px;
+      padding: 18px 18px 18px 34px;
+      border: 1px solid var(--klein-mid);
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--klein-soft), color-mix(in srgb, var(--paper) 94%, transparent));
+      box-shadow: inset 4px 0 0 color-mix(in srgb, var(--klein) 74%, transparent);
+    }
+
+    .entry-card::before { display: none; }
+    .entry-card::after { display: none; }
+
+    .entry::before {
+      content: "";
+      position: absolute;
+      top: 8px;
+      left: 0;
+      width: 7px;
+      height: 7px;
+      border: 2px solid var(--accent-strong);
+      border-radius: 50%;
+      background: var(--paper);
+    }
+
+    .entry::after {
+      content: "";
+      position: absolute;
+      top: 19px;
+      bottom: -22px;
+      left: 4px;
+      width: 1px;
+      background: var(--line);
+    }
+
+    .entry:last-child::after { display: none; }
+
+    .entry-head {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      align-items: baseline;
+    }
+
+    .entry h3 { margin: 0; color: var(--ink); font-size: 15px; line-height: 1.45; }
+    .entry h3 span { color: var(--muted); font-weight: 500; }
+
+    time {
+      color: var(--impact);
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .entry ul {
+      margin: 8px 0 0;
+      padding: 0;
+      list-style: none;
+      color: color-mix(in srgb, var(--ink) 80%, var(--muted));
+    }
+
+    .entry li { position: relative; padding-left: 14px; }
+    .entry li + li { margin-top: 4px; }
+    .entry li::before { content: "–"; position: absolute; left: 0; color: var(--accent-strong); }
+
+    .featured-entry {
+      margin-left: -12px;
+      padding: 20px 20px 20px 32px;
+      border: 1px solid color-mix(in srgb, var(--klein) 36%, var(--line));
+      border-left: 5px solid var(--impact);
+      border-radius: 14px;
+      background: linear-gradient(135deg, color-mix(in srgb, var(--klein-soft) 88%, transparent), color-mix(in srgb, var(--paper) 92%, transparent));
+      box-shadow: none;
+    }
+
+    .featured-entry::before { left: 11px; border-color: var(--impact); }
+    .featured-entry::after { display: none; }
+
+    .project-focus {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 14px !important;
+    }
+
+    .project-focus li {
+      display: flex;
+      min-height: 138px;
+      padding: 14px 15px;
+      border: 1px solid var(--klein-mid);
+      border-top: 4px solid var(--accent-strong);
+      border-radius: 10px;
+      background: color-mix(in srgb, var(--klein-soft) 84%, var(--paper));
+      flex-direction: column;
+    }
+
+    .project-focus li:nth-child(2) { border-top-color: var(--accent); }
+    .project-focus li:nth-child(3) { border-top-color: var(--impact); }
+    .project-focus li:nth-child(4) { border-top-color: var(--klein); }
+    .project-focus li::before { display: none; }
+    .project-focus strong { display: block; color: var(--ink); font-size: 13px; }
+    .project-focus span { display: block; margin-top: 2px; color: var(--muted); font-size: 12px; }
+
+    .project-type {
+      margin-bottom: 7px !important;
+      color: var(--accent-strong) !important;
+      font-size: 10px !important;
+      font-weight: 800;
+      letter-spacing: .1em;
+    }
+
+    .project-link {
+      align-self: flex-start;
+      margin-top: auto;
+      padding-top: 9px;
+      color: var(--klein);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .project-link:hover { color: var(--impact); }
+
+    .project-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px; }
+    .project-actions .project-link { margin-top: 0; padding: 7px 10px; color: var(--paper); background: var(--klein); border-radius: 6px; }
+    .project-actions .project-link:hover { color: #fff; background: var(--impact); }
+
+    .link-note {
+      margin: 12px 0 0;
+      padding: 10px 12px;
+      border: 1px dashed var(--klein-mid);
+      border-radius: 8px;
+      color: var(--muted);
+      background: var(--klein-soft);
+      font-size: 11px;
+    }
+
+    .side-card {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: linear-gradient(145deg, var(--klein-soft), color-mix(in srgb, var(--paper) 91%, transparent));
+      border-color: var(--klein-mid);
+    }
+
+    .side-card + .side-card { margin-top: 16px; }
+    .side-card h3 { margin: 0 0 8px; font-size: 14px; }
+    .side-card p { margin: 0; color: var(--muted); }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+
+    .skill-block {
+      padding: 18px;
+      border: 1px solid var(--klein-mid);
+      border-radius: 14px;
+      background: var(--klein-soft);
+    }
+
+    .skill-block + .skill-block { margin-top: 14px; }
+    .skill-block h3 { margin: 0 0 12px; font-size: 13px; }
+
+    .tag {
+      padding: 6px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--paper);
+      color: color-mix(in srgb, var(--ink) 86%, var(--muted));
+      font-size: 12px;
+      font-weight: 650;
+    }
+
+    .soft-layout { display: grid; justify-items: center; gap: 14px; }
+
+    .fan-chart {
+      position: relative;
+      width: 144px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: conic-gradient(
+        var(--klein) 0 22%,
+        var(--accent-strong) 22% 43%,
+        var(--accent) 43% 64%,
+        var(--impact) 64% 82%,
+        #7851d5 82% 100%
+      );
+      box-shadow: 0 10px 28px rgba(0, 47, 167, .16);
+    }
+
+    .fan-chart::after {
+      content: "软能力";
+      position: absolute;
+      inset: 31%;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--ink);
+      background: var(--paper);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .fan-legend {
+      display: grid;
+      width: 100%;
+      grid-template-columns: 1fr 1fr;
+      gap: 7px 10px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .fan-legend span::before {
+      content: "";
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      margin-right: 6px;
+      border-radius: 50%;
+      background: var(--klein);
+    }
+
+    .fan-legend span:nth-child(2)::before { background: var(--accent-strong); }
+    .fan-legend span:nth-child(3)::before { background: var(--accent); }
+    .fan-legend span:nth-child(4)::before { background: var(--impact); }
+    .fan-legend span:nth-child(5)::before { background: #7851d5; }
+
+    .project-list { display: grid; gap: 13px; }
+
+    .project {
+      padding-bottom: 13px;
+      border-bottom: 1px dashed var(--line);
+    }
+
+    .project:last-child { padding-bottom: 0; border-bottom: 0; }
+    .project b { display: block; margin-bottom: 3px; font-size: 13px; }
+    .project p { margin: 0; color: var(--muted); font-size: 12px; }
+
+    .project a {
+      display: inline-block;
+      margin-top: 5px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .education strong { display: block; margin-bottom: 4px; font-size: 15px; }
+    .education p { margin: 0; color: var(--muted); }
+
+    .note {
+      margin-top: 16px;
+      padding-top: 15px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    @media (max-width: 760px) {
+      .toolbar { position: absolute; }
+      .page { width: 100%; margin: 0; border: 0; border-radius: 0; box-shadow: none; }
+      .hero, .content { grid-template-columns: 1fr; padding-left: 24px; padding-right: 24px; }
+      .hero { gap: 32px; padding-top: 86px; }
+      .contact { padding: 0; border: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px 20px; }
+      .content { gap: 42px; }
+      .entry-head { grid-template-columns: 1fr; gap: 2px; }
+      .project-focus { grid-template-columns: 1fr; }
+      .project-focus li { min-height: 0; }
+    }
+
+    @page { size: A4; margin: 0; }
+
+    @media print {
+      :root {
+        --paper: #fff;
+        --canvas: #fff;
+        --ink: #0b1f3a;
+        --muted: #5f6f82;
+        --line: #cfdae5;
+        --accent: #00a3b4;
+        --accent-strong: #0874d1;
+        --impact: #ff563f;
+        --klein: #002fa7;
+        --klein-soft: rgba(0, 47, 167, .075);
+        --klein-mid: rgba(0, 47, 167, .14);
+        --accent-soft: #dff5f7;
+        --tag: #e8f3f7;
+      }
+
+      body { background: #fff; font-size: 9.2pt; line-height: 1.43; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      .toolbar, .web-only { display: none !important; }
+      .page { width: 210mm; height: 297mm; margin: 0; border: 0; border-radius: 0; box-shadow: none; }
+      .hero { grid-template-columns: 1.5fr .85fr; gap: 9mm; padding: 11mm 13mm 7mm; }
+      h1 { font-size: 34pt; }
+      .eyebrow { margin-bottom: 1.8mm; font-size: 7.5pt; }
+      .role { margin-top: 2.5mm; font-size: 10pt; }
+      .summary { margin-top: 4mm; font-size: 9.2pt; line-height: 1.55; }
+      .feature-bar { gap: 1.2mm; margin-top: 3mm; }
+      .feature-chip { padding: 1.1mm 1.8mm; border-radius: 1.1mm; font-size: 6.9pt; }
+      .contact { padding-left: 5mm; }
+      .contact-item { margin-bottom: 2.1mm; }
+      .contact-label { font-size: 6.7pt; }
+      .contact-value { font-size: 8.4pt; }
+      .content { grid-template-columns: 1.68fr .82fr; gap: 8mm; padding: 7mm 13mm 9mm; }
+      section + section { margin-top: 6mm; }
+      .section-title { gap: 2mm; margin-bottom: 3.3mm; font-size: 9.6pt; }
+      .section-title::before { width: 5mm; height: .6mm; }
+      .entry { padding-left: 4mm; break-inside: avoid; }
+      .entry + .entry { margin-top: 3.3mm; }
+      .entry-card { margin-left: -1.5mm; padding: 2.4mm 2.5mm 2.4mm 5mm; border-radius: 2mm; box-shadow: inset .8mm 0 0 color-mix(in srgb, var(--klein) 74%, transparent); }
+      .entry-card::before { left: 1.5mm; }
+      .entry::before { top: 1.4mm; width: 1.5mm; height: 1.5mm; border-width: .45mm; }
+      .entry::after { top: 4mm; bottom: -3.2mm; left: .8mm; }
+      .entry h3 { font-size: 9.3pt; }
+      time { font-size: 7.4pt; }
+      .entry ul { margin-top: 1.2mm; }
+      .entry li + li { margin-top: .5mm; }
+      .featured-entry { margin-left: -1.5mm; padding: 3mm 3mm 3mm 5mm; border-left-width: 1mm; border-radius: 2mm; }
+      .featured-entry::before { left: 1.5mm; }
+      .project-focus { grid-template-columns: 1fr 1fr; gap: 1.5mm; margin-top: 1.5mm !important; }
+      .project-focus li { min-height: 26mm; padding: 1.7mm; border-top-width: .8mm; }
+      .project-focus strong { font-size: 7.6pt; }
+      .project-focus span { margin-top: .3mm; font-size: 6.9pt; }
+      .project-type { margin-bottom: .7mm !important; font-size: 6pt !important; }
+      .project-link { padding-top: 1mm; font-size: 6.5pt; }
+      .side-card { padding: 3.5mm; border-radius: 2.5mm; }
+      .side-card + .side-card { margin-top: 2.7mm; }
+      .side-card h3 { margin-bottom: 1.2mm; font-size: 8.7pt; }
+      .side-card p, .project p, .note { font-size: 7.4pt; }
+      .tags { gap: 1.2mm; }
+      .tag { padding: 1mm 1.8mm; font-size: 7.2pt; }
+      .skill-block { padding: 2.8mm; border-radius: 2mm; }
+      .skill-block + .skill-block { margin-top: 2.5mm; }
+      .skill-block h3 { margin-bottom: 1.5mm; font-size: 8pt; }
+      .soft-layout { gap: 1.5mm; }
+      .fan-chart { width: 27mm; }
+      .fan-chart::after { font-size: 6.8pt; }
+      .fan-legend { gap: 1mm; font-size: 6.3pt; }
+      .project-list { gap: 1.8mm; }
+      .project { padding-bottom: 1.8mm; }
+      .project b { margin-bottom: .5mm; font-size: 8pt; }
+      .project a { margin-top: .6mm; font-size: 7.2pt; }
+      .education strong { margin-bottom: .6mm; font-size: 9.2pt; }
+      .note { margin-top: 2.2mm; padding-top: 2mm; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar" aria-label="页面工具">
+    <button type="button" id="themeButton" aria-label="切换明暗主题">切换主题</button>
+    <button type="button" onclick="window.print()">打印 / PDF</button>
+  </div>
+
+  <main class="page">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Resume · Film / Culture / Project</p>
+        <h1>陈奕成</h1>
+        <p class="role">影视内容创作 × 文字编辑 × 项目统筹 × AI 人文实践</p>
+        <p class="summary">以影视创作为内容底座，以文字编辑和现场统筹推动项目交付。拥有校级媒体内容、院刊编辑、非遗活动管理及短片导演/制片经验，并将 AIGC、AI Agent 与人文研究结合，形成兼具创意、执行力与新工具意识的复合能力。</p>
+        <div class="feature-bar" aria-label="核心特点">
+          <span class="feature-chip">20+ 场活动拍摄</span>
+          <span class="feature-chip">部门负责人</span>
+          <span class="feature-chip">院刊编辑</span>
+          <span class="feature-chip">AI × 人文项目</span>
+        </div>
+      </div>
+
+      <div class="contact">
+        <p class="contact-item"><span class="contact-label">PHONE</span><span class="contact-value"><a href="tel:13915726809">139 1572 6809</a></span></p>
+        <p class="contact-item"><span class="contact-label">EMAIL</span><span class="contact-value"><a href="mailto:chennlulu233@outlook.com">chennlulu233@outlook.com</a></span></p>
+        <p class="contact-item"><span class="contact-label">LOCATION</span><span class="contact-value">苏州 / 兰州</span></p>
+        <p class="contact-item"><span class="contact-label">FOCUS</span><span class="contact-value">影视内容 / 项目统筹</span></p>
+      </div>
+    </header>
+
+    <div class="content">
+      <div class="main-column">
+        <section>
+          <h2 class="section-title">实践经历</h2>
+
+          <article class="entry entry-card">
+            <div class="entry-head">
+              <h3>校园文化活动指导中心 <span>｜视频剪辑岗 / 教练</span></h3>
+              <time>2025.12 – 至今</time>
+            </div>
+            <ul>
+              <li>剪辑校级文化活动宣传视频，成片在学校官方媒体账号发布；参与以学校名义报送的微电影后期制作。</li>
+              <li>围绕素材筛选、节奏组织与交付要求推进剪辑任务，积累校园文化内容生产经验。</li>
+            </ul>
+          </article>
+
+          <article class="entry entry-card">
+            <div class="entry-head">
+              <h3>古琴传习基地·综合实践部 <span>｜部门负责人</span></h3>
+              <time>2026.05 – 至今</time>
+            </div>
+            <ul>
+              <li>策划非遗与传统文化相关活动，负责对接学生组织、安排会议及推进部门协作。</li>
+              <li>统筹文件与新闻稿撰写、财务管理、志愿服务及学生活动申请等日常事务。</li>
+            </ul>
+          </article>
+
+          <article class="entry entry-card">
+            <div class="entry-head">
+              <h3>文学院融媒体中心·影视部 <span>｜场摄 / 现场执行</span></h3>
+              <time>2025.10 – 2026.07</time>
+            </div>
+            <ul>
+              <li>完成国家奖学金答辩、校戏剧大赛、运动会等 20+ 场活动拍摄，为学院公众号供图。</li>
+              <li>现场组织群体合照并与活动方对接；针对换班交接与设备不足提出改进建议并获采纳。</li>
+            </ul>
+          </article>
+
+          <article class="entry entry-card">
+            <div class="entry-head">
+              <h3>文学院院刊编辑部 <span>｜编辑</span></h3>
+              <time>2025.10 – 2026.06</time>
+            </div>
+            <ul>
+              <li>负责报刊版面排版、稿件校改、征稿启事及书影推荐语撰写。</li>
+              <li>从日常文化现象中提炼议题，为月度版面拟定兼具问题意识与可读性的主题。</li>
+            </ul>
+          </article>
+        </section>
+
+        <section>
+          <h2 class="section-title">精选项目</h2>
+
+          <article class="entry entry-card">
+            <div class="entry-head">
+              <h3>短片创作 <span>｜导演 / 制片</span></h3>
+              <time>2026</time>
+            </div>
+            <ul>
+              <li>推进个人短片《我们灿烂的阴沉》与 AIGC 短片《Ελένη》，承担创意、导演及制片工作。</li>
+              <li>参与兰州大学文学院招生宣传片拍摄并担任导演，训练现场调度与项目交付能力。</li>
+            </ul>
+            <div class="project-actions web-only">
+              <a class="project-link" href="projects/canyin.html">《我们灿烂的阴沉》案例 ↗</a>
+              <a class="project-link" href="projects/aigc-huoshi.html">火石杯 AIGC 案例 ↗</a>
+            </div>
+          </article>
+
+          <article class="entry entry-card featured-entry">
+            <div class="entry-head">
+              <h3>AI × 人文跨学科实践 <span>｜标注 / 研究 / 工具开发</span></h3>
+              <time>2026.03 – 至今</time>
+            </div>
+            <ul class="project-focus">
+              <li><span class="project-type">AI INDUSTRY</span><strong>字节跳动 · 视频大模型标注项目</strong><span>参与视频素材标注，在统一标准下处理高密度信息并完成判断与归类。</span><a class="project-link" href="#portfolio-links" data-url-slot="byte-video-model">项目页面 · 待接入 ↗</a></li>
+              <li><span class="project-type">AI × HEALTH</span><strong>兰州大学信息院 · 心理健康大模型课题组</strong><span>参与杨民强教授课题组的跨学科研究工作，连接人文背景与大模型应用场景。</span><a class="project-link" href="#portfolio-links" data-url-slot="mental-health-llm">研究页面 · 待接入 ↗</a></li>
+              <li><span class="project-type">AI × HUMANITIES</span><strong>校创研究 · 后人类语境中 AIGC 文学叙事</strong><span>主导 ANT 方法追踪生成流程，负责技术网络论文与数字人文方法支持。</span><a class="project-link" href="projects/aigc-humanities.html" data-url-slot="aigc-literature">查看研究案例 ↗</a></li>
+              <li><span class="project-type">PERSONAL TOOL</span><strong>个人工具 · 云端同步 AI 数据看板</strong><span>通过 Vibe Coding 与 AI Agent 优化个人信息整理、归档与查看流程。</span><a class="project-link" href="#portfolio-links" data-url-slot="ai-dashboard">产品页面 · 待接入 ↗</a></li>
+            </ul>
+            <p class="link-note" id="portfolio-links">短片与 AI × 人文案例已接入；其余项目仍保留预留位，后续只需替换按钮的 href 地址。</p>
+          </article>
+        </section>
+      </div>
+
+      <aside>
+        <section>
+          <h2 class="section-title">教育背景</h2>
+          <div class="side-card education">
+            <strong>兰州大学</strong>
+            <p>戏剧影视文学<br>数智人文创新班 · 2029届</p>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="section-title">能力结构</h2>
+          <div class="skill-block">
+            <h3>硬技能 · HARD SKILLS</h3>
+            <div class="tags">
+              <span class="tag">活动策划与执行</span>
+              <span class="tag">项目跟进</span>
+              <span class="tag">现场统筹</span>
+              <span class="tag">文字编辑</span>
+              <span class="tag">内容选题</span>
+              <span class="tag">摄影摄像</span>
+              <span class="tag">视频剪辑</span>
+              <span class="tag">AI 工具应用</span>
+            </div>
+          </div>
+          <div class="skill-block">
+            <h3>软能力 · SOFT SKILLS</h3>
+            <div class="soft-layout">
+              <div class="fan-chart" role="img" aria-label="沟通协调、责任细致、快速学习、现场应变、创意好奇五项软能力扇形图"></div>
+              <div class="fan-legend">
+                <span>沟通协调</span>
+                <span>责任细致</span>
+                <span>快速学习</span>
+                <span>现场应变</span>
+                <span>创意好奇</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="section-title">岗位匹配</h2>
+          <div class="side-card">
+            <h3>统筹与执行</h3>
+            <p>具备学生组织管理、活动现场对接、多任务协调和流程改进经验。</p>
+          </div>
+          <div class="side-card">
+            <h3>内容与电影</h3>
+            <p>戏剧影视文学背景，拥有院刊、新媒体、短片与校园宣传内容实践。</p>
+          </div>
+          <div class="side-card web-only">
+            <h3>学习与工具</h3>
+            <p>参与大模型与跨学科研究项目，主动使用 AI Agent 和代码逻辑优化信息工作流。</p>
+          </div>
+        </section>
+
+        <section class="web-only">
+          <h2 class="section-title">项目速览</h2>
+          <div class="project-list">
+            <div class="project">
+              <b>《我们灿烂的阴沉》</b>
+              <p>个人导演 / 制片短片，已形成 63 秒版本。</p>
+              <a href="projects/canyin.html">查看案例页 ↗</a>
+            </div>
+            <div class="project"><b>《Ελένη》</b><p>火石杯 AIGC 项目，项目主导 / 创意统筹，筹备中。</p><a href="projects/aigc-huoshi.html">查看案例页 ↗</a></div>
+            <div class="project"><b>后人类语境中 AIGC 文学叙事研究</b><p>技术网络研究 / ANT 流程追踪 · 2026.04–2027.04。</p><a href="projects/aigc-humanities.html">查看研究案例 ↗</a></div>
+          </div>
+        </section>
+
+        <p class="note">作品集可按岗位需要补充：文章、短片、摄影作品、AIGC 项目与个人数据看板。</p>
+      </aside>
+    </div>
+  </main>
+
+  <script>
+    const button = document.getElementById('themeButton');
+    const savedTheme = localStorage.getItem('resume-theme');
+    if (savedTheme) document.documentElement.dataset.theme = savedTheme;
+    button.addEventListener('click', () => {
+      const next = document.documentElement.dataset.theme === 'night' ? '' : 'night';
+      document.documentElement.dataset.theme = next;
+      localStorage.setItem('resume-theme', next);
+    });
+  </script>
+</body>
+</html>
